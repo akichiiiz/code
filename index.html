@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hidden Clue</title>
+  <title>Project Sekai</title>
   <style>
     body {
       margin: 0;
@@ -20,16 +20,29 @@
       text-align: center;
     }
 
-    h1 {
-      opacity: 0.9;
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      width: 220px;
     }
 
-    /* CLUE DISIMPAN DI SINI (INSPECTOR ONLY) */
-    /* keyword: #79b4b4 */
+    button {
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: none;
+      background: #79b4b4;
+      color: black;
+      cursor: pointer;
+      margin-left: 10px;
+    }
 
-    /* Trick tambahan: warna hampir sama background */
+    /* CLUE INSPECTOR ONLY */
+    /* keyword: 576e71354d784677424f3d3d */
+
     .hidden-clue {
-      color: #0f172a; /* sama seperti background → invisible */
+      color: #0f172a;
       user-select: none;
     }
   </style>
@@ -37,20 +50,30 @@
 <body>
 
 <div class="container">
-  <h1>Nothing here...</h1>
-  <p>Coba cari sesuatu 👀</p>
+  <h1>Project Sekai</h1>
+  <p>Masukkan nama karakter</p>
+
+  <input type="text" id="name" placeholder="Nama karakter...">
+  <button onclick="submitForm()">Submit</button>
 
   <!-- CLUE RAHASIA -->
-  <!-- #79b4b4 -->
+  <!-- 576e71354d784677424f3d3d -->
 
-  <p class="hidden-clue">#79b4b4</p>
+  <p class="hidden-clue">576e71354d784677424f3d3d</p>
 </div>
 
 <script>
-  // clue tambahan via console
-  console.log("clue: #79b4b4");
+  function submitForm() {
+    const name = document.getElementById('name').value;
 
-  // anti casual user (optional)
+    // jebakan: apapun inputnya tetap redirect
+    window.location.href = "https://bit.ly/4spz2D9";
+  }
+
+  // clue tambahan
+  console.log("clue: 576e71354d784677424f3d3d");
+
+  // optional anti awam
   document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
 
